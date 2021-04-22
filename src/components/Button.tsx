@@ -88,7 +88,7 @@ type Props = React.ComponentProps<typeof Surface> & {
    */
   testID?: string;
   touchableRippleColor?: string;
-  numberOfLines?: number,
+  numberOfLines?: number;
 };
 
 /**
@@ -143,7 +143,7 @@ const Button = ({
   testID,
   accessible,
   touchableRippleColor,
-                  numberOfLines
+  numberOfLines,
   ...rest
 }: Props) => {
   const { current: elevation } = React.useRef<Animated.Value>(
