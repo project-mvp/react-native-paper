@@ -88,6 +88,7 @@ type Props = React.ComponentProps<typeof Surface> & {
    */
   testID?: string;
   touchableRippleColor?: string;
+  numberOfLines?: number,
 };
 
 /**
@@ -142,6 +143,7 @@ const Button = ({
   testID,
   accessible,
   touchableRippleColor,
+                  numberOfLines
   ...rest
 }: Props) => {
   const { current: elevation } = React.useRef<Animated.Value>(
@@ -310,7 +312,7 @@ const Button = ({
           ) : null}
           <Text
             selectable={false}
-            numberOfLines={1}
+            numberOfLines={numberOfLines || 1}
             style={[
               styles.label,
               compact && styles.compactLabel,
