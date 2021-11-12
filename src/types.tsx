@@ -81,6 +81,7 @@ declare global {
       thin: ThemeFont;
     }
     interface ThemeColors {
+      primaryBackgroundInput: string;
       primary: string;
       background: string;
       surface: string;
