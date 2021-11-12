@@ -300,6 +300,7 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
       };
     }
 
+    const isAndroid = Platform.OS === 'android';
     return (
       <View style={[viewStyle, { borderRadius: theme.roundness }]}>
         <View style={[containerStyle]}>
@@ -311,6 +312,21 @@ class TextInputFlat extends React.Component<ChildTextInputProps> {
               },
             ]}
           >
+            {!isAndroid && multiline && (
+              <View
+                testID="patch-container"
+                pointerEvents="none"
+                style={[
+                  StyleSheet.absoluteFill,
+                  dense ? styles.densePatchContainer : styles.patchContainer,
+                  {
+                    backgroundColor: 'red',
+                    left: paddingLeft,
+                    right: paddingRight,
+                  },
+                ]}
+              />
+            )}
             <InputLabel parentState={parentState} labelProps={labelProps} />
             {render?.({
               ...rest,
@@ -382,5 +398,13 @@ const styles = StyleSheet.create({
   inputFlatDense: {
     paddingTop: 22,
     paddingBottom: 2,
+  },
+  patchContainer: {
+    height: 24,
+    zIndex: 2,
+  },
+  densePatchContainer: {
+    height: 22,
+    zIndex: 2,
   },
 });

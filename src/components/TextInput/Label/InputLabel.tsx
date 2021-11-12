@@ -4,6 +4,12 @@ import AnimatedText from '../../Typography/AnimatedText';
 
 import type { InputLabelProps } from '../types';
 
+const styles = StyleSheet.create({
+  labelContainer: {
+    zIndex: 3,
+  },
+});
+
 const InputLabel = (props: InputLabelProps) => {
   const { parentState, labelBackground } = props;
 
@@ -77,6 +83,7 @@ const InputLabel = (props: InputLabelProps) => {
       pointerEvents="none"
       style={[
         StyleSheet.absoluteFill,
+        styles.labelContainer,
         {
           opacity:
             // Hide the label in minimized state until we measure it's width
