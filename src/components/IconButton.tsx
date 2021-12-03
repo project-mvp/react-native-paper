@@ -50,6 +50,10 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
   style?: StyleProp<ViewStyle>;
   ref?: React.RefObject<TouchableWithoutFeedback>;
   /**
+   * Whether an rippleColor apply Opacity or not.
+   */
+  applyOpacity?: boolean;
+  /**
    * @optional
    */
   theme: ReactNativePaper.Theme;
@@ -99,6 +103,7 @@ const IconButton = ({
   onPress,
   animated = false,
   theme,
+  applyOpacity = true,
   style,
   ...rest
 }: Props) => {
@@ -110,6 +115,7 @@ const IconButton = ({
   const BUTTON_SIZE = buttonSize || size * 1.5;
   return (
     <TouchableRipple
+      applyOpacity={applyOpacity}
       borderless
       centered
       onPress={onPress}

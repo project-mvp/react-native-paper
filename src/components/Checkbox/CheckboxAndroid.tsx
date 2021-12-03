@@ -187,19 +187,9 @@ const CheckboxAndroid = ({
 CheckboxAndroid.displayName = 'Checkbox.Android';
 
 const styles = StyleSheet.create({
-  container: {
-    borderRadius: 18,
-    width: 36,
-    height: 36,
-    padding: 6,
-  },
   fillContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  fill: {
-    height: 14,
-    width: 14,
   },
 });
 
