@@ -102,7 +102,7 @@ const TouchableRipple = ({
   underlayColor: _underlayColor,
   children,
   theme,
-  applyOpacity,
+  applyOpacity = true,
   ...rest
 }: Props) => {
   const handlePressIn = (e: any) => {
