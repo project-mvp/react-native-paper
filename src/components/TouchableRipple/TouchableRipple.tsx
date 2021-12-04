@@ -50,15 +50,10 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
    */
   children: React.ReactNode;
   style?: StyleProp<ViewStyle>;
-  touchableStyle?: StyleProp<ViewStyle>;
   /**
    * @optional
    */
   theme: ReactNativePaper.Theme;
-  /**
-   * Whether an rippleColor apply Opacity or not.
-   */
-  applyOpacity?: boolean;
 };
 
 /**
@@ -94,7 +89,6 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
  */
 const TouchableRipple = ({
   style,
-  touchableStyle,
   background: _background,
   borderless = false,
   disabled: disabledProp,
@@ -102,7 +96,6 @@ const TouchableRipple = ({
   underlayColor: _underlayColor,
   children,
   theme,
-  applyOpacity = true,
   ...rest
 }: Props) => {
   const handlePressIn = (e: any) => {
@@ -180,7 +173,7 @@ const TouchableRipple = ({
 
       /* We'll animate these properties */
       transform: 'translate3d(-50%, -50%, 0) scale3d(0.1, 0.1, 0.1)',
-      opacity: applyOpacity ? '0.5' : '1',
+      opacity: '0.5',
 
       // Position the ripple where cursor was
       left: `${touchX}px`,
@@ -241,7 +234,6 @@ const TouchableRipple = ({
   return (
     <TouchableWithoutFeedback
       {...rest}
-      style={touchableStyle}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       disabled={disabled}

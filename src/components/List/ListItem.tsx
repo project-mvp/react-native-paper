@@ -64,7 +64,6 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
    * Style that is passed to the wrapping TouchableRipple element.
    */
   style?: StyleProp<ViewStyle>;
-  touchableStyle?: StyleProp<ViewStyle>;
   /**
    * Style that is passed to Title element.
    */
@@ -133,7 +132,6 @@ const ListItem = ({
   onPress,
   theme,
   style,
-  touchableStyle,
   titleStyle,
   titleNumberOfLines = 1,
   descriptionNumberOfLines = 2,
@@ -176,7 +174,6 @@ const ListItem = ({
   return (
     <TouchableRipple
       {...rest}
-      touchableStyle={touchableStyle}
       rippleColor={rippleColor}
       style={[styles.container, style]}
       onPress={onPress}
