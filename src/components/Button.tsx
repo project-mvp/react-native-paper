@@ -89,6 +89,7 @@ type Props = React.ComponentProps<typeof Surface> & {
   testID?: string;
   touchableRippleColor?: string;
   numberOfLines?: number;
+  iconPosition?: string;
 };
 
 /**
@@ -144,6 +145,7 @@ const Button = ({
   accessible,
   touchableRippleColor,
   numberOfLines,
+  iconPosition,
   ...rest
 }: Props) => {
   const { current: elevation } = React.useRef<Animated.Value>(
@@ -287,7 +289,13 @@ const Button = ({
       >
         <View style={[styles.content, contentStyle]}>
           {icon && loading !== true ? (
-            <View style={iconStyle}>
+            <View
+              style={
+                iconPosition === 'LEFT'
+                  ? { position: 'absolute', left: 20 }
+                  : iconStyle
+              }
+            >
               <Icon
                 source={icon}
                 size={customLabelSize ?? 16}
@@ -307,7 +315,11 @@ const Button = ({
                   ? customLabelColor
                   : textColor
               }
-              style={iconStyle}
+              style={
+                iconPosition === 'LEFT'
+                  ? { position: 'absolute', left: 20 }
+                  : iconStyle
+              }
             />
           ) : null}
           <Text
