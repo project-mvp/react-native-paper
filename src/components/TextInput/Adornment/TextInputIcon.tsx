@@ -17,7 +17,7 @@ type Props = $Omit<
 };
 
 export const ICON_SIZE = 24;
-const ICON_OFFSET = 12;
+const ICON_OFFSET = 10;
 
 type StyleContextType = {
   style: StyleProp<ViewStyle>;
