@@ -84,6 +84,8 @@ type Props = {
    * TestID used for testing purposes
    */
   testID?: string;
+  rippleColor?: string;
+  underlayColor?: string;
 };
 
 /**
@@ -146,6 +148,8 @@ const ListAccordion = ({
   onPress,
   onLongPress,
   expanded: expandedProp,
+  rippleColor,
+  underlayColor,
 }: Props) => {
   const [expanded, setExpanded] = React.useState<boolean>(
     expandedProp || false
@@ -190,6 +194,8 @@ const ListAccordion = ({
         accessibilityComponentType="button"
         accessibilityRole="button"
         testID={testID}
+        rippleColor={rippleColor}
+        underlayColor={underlayColor}
       >
         <View style={styles.row} pointerEvents="none">
           {left
