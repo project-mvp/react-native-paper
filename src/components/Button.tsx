@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import color from 'color';
 
-import ActivityIndicator from './ActivityIndicator';
 import Icon, { IconSource } from './Icon';
 import Surface from './Surface';
 import Text from './Typography/Text';
