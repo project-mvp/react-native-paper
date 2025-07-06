@@ -90,7 +90,7 @@ type Props = React.ComponentProps<typeof Surface> & {
   touchableRippleColor?: string;
   numberOfLines?: number;
   iconPosition?: string;
-  loadingIcon: React.ReactNode;
+  loadingIcon?: React.ReactNode;
 };
 
 /**
