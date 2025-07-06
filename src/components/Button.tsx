@@ -309,23 +309,8 @@ const Button = ({
               />
             </View>
           ) : null}
-          {loading && loadingIcon !== null ? (
-              {loadingIcon}
-          ) : null}
-          {loading && loadingIcon === null ? (
-            <ActivityIndicator
-              size={customLabelSize ?? 16}
-              color={
-                typeof customLabelColor === 'string'
-                  ? customLabelColor
-                  : textColor
-              }
-              style={
-                iconPosition === 'LEFT'
-                  ? { position: 'absolute', left: 20 }
-                  : iconStyle
-              }
-            />
+          {loading ? (
+              <>{loadingIcon}</>
           ) : null}
           <Text
             selectable={false}
