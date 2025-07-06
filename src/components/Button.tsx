@@ -309,10 +309,10 @@ const Button = ({
               />
             </View>
           ) : null}
-          {loading && loadingIcon ? (
+          {loading && loadingIcon !== null ? (
               {loadingIcon}
           ) : null}
-          {loading && !loadingIcon ? (
+          {loading && loadingIcon === null ? (
             <ActivityIndicator
               size={customLabelSize ?? 16}
               color={
