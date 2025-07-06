@@ -90,6 +90,7 @@ type Props = React.ComponentProps<typeof Surface> & {
   touchableRippleColor?: string;
   numberOfLines?: number;
   iconPosition?: string;
+  loadingIcon: React.ReactNode;
 };
 
 /**
@@ -146,6 +147,7 @@ const Button = ({
   touchableRippleColor,
   numberOfLines,
   iconPosition,
+  loadingIcon,
   ...rest
 }: Props) => {
   const { current: elevation } = React.useRef<Animated.Value>(
@@ -307,7 +309,10 @@ const Button = ({
               />
             </View>
           ) : null}
-          {loading ? (
+          {loading && loadingIcon ? (
+              {loadingIcon}
+          ) : null}
+          {loading && !loadingIcon ? (
             <ActivityIndicator
               size={customLabelSize ?? 16}
               color={
